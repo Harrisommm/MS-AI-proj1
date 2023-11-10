@@ -19,8 +19,8 @@ def home(request):
     return render(request, 'home.html')
 # ------------------------------------------------
 
+
 def detect(ret, frame):
-        
         if (ret is True) :
             prev_time = time.time()
             results = model.track(frame, persist=True)
@@ -29,7 +29,7 @@ def detect(ret, frame):
             detect_frame = cv2.resize(detect_frame, (640, 480))
             return detect_frame
 
-def stream(video_path):
+def stream():
     cap = cv2.VideoCapture(video_path)
     
     while cap.isOpened():
@@ -56,4 +56,3 @@ def video(request):
     except: # This is bad! replace it with proper handling
         print("error..")
         pass
-
