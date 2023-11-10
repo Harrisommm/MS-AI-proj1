@@ -16,7 +16,7 @@ prev_time = 0
 frame_rate = 10
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'home_main.html')
 # ------------------------------------------------
 
 def detect(ret, frame):

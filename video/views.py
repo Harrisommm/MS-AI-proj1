@@ -15,12 +15,11 @@ global  frame_rate
 prev_time = 0
 frame_rate = 10
 
-def home(request):
-    return render(request, 'home.html')
+
 # ------------------------------------------------
 
-
 def detect(ret, frame):
+        
         if (ret is True) :
             prev_time = time.time()
             results = model.track(frame, persist=True)
