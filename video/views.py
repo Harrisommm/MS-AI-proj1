@@ -19,17 +19,16 @@ frame_rate = 10
 # ------------------------------------------------
 
 def detect(ret, frame):
-        
-        if (ret is True) :
-            prev_time = time.time()
-            results = model.track(frame, persist=True)
+    if (ret is True) :
+        prev_time = time.time()
+        results = model.track(frame, persist=True)
 
-            detect_frame = results[0].plot()
-            detect_frame = cv2.resize(detect_frame, (640, 480))
-            return detect_frame
+        detect_frame = results[0].plot()
+        detect_frame = cv2.resize(detect_frame, (640, 480))
+        return detect_frame
 
 def stream():
-    cap = cv2.VideoCapture(video_path)
+    cap=cv2.VideoCapture(video_path)
     
     while cap.isOpened():
         ret, frame = cap.read()

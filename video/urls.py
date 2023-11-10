@@ -4,5 +4,5 @@ from django.urls import path
 from video import views
 
 urlpatterns = [
-    path('video_test', views.video, name='video_output'),
+    path('video_test', views.video, name='video_test'),
 ]
