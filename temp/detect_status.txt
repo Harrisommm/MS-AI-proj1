@@ -1,0 +1,3 @@
+manhole_closed : 1
+manhole_hole : 1
+person : 1

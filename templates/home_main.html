@@ -1,0 +1,133 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="toggle.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>videojs</title>
+    <script src="test.js"></script>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif; 
+            color: #333;  
+            display: flex;
+            align-items: stretch;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .upload-container {
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            max-width: calc(75% - 10px); 
+        }
+
+        .video-container img {
+            flex-basis: calc(50% - 10px); /* 2개씩 위아래로 배치 */
+            max-width: calc(50% - 10px); /* 최대 너비 */
+            max-height: calc(50vh - 10px);
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .button-container {
+            font-size: 30px;
+            padding: 30px 50px;
+            flex-basis: 50%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+            height: 100%;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .button-container label {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .button-container label:first-child {
+            margin-bottom: 20px;
+        }
+
+        .button-container label:nth-child(2) {
+            margin-bottom: 20px;
+        }
+
+        .button-container label input {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <!-- <label for="my_image1" class="upload-label">스크린 1</label>
+        <input type="text" class="image-upload" placeholder="이미지 URL 입력" data-target="my_image1">
+        
+        <label for="my_image2" class="upload-label">스크린 2</label>
+        <input type="text" class="image-upload" placeholder="이미지 URL 입력" data-target="my_image2">
+        
+        <label for="my_image3" class="upload-label">스크린 3</label>
+        <input type="text" class="image-upload" placeholder="이미지 URL 입력" data-target="my_image3">
+        
+        <label for="my_image4" class="upload-label">스크린 4</label>
+        <input type="text" class="image-upload" placeholder="이미지 URL 입력" data-target="my_image4"> -->
+    </div>
+    <div class="video-container">
+        <a href="{% url 'move_test1' %}">
+            <video class="video" muted autoplay playsinline loop width="640" height="360" controls>
+                <source src="{% static 'cctv_video/cctv1.mp4' %}" type="video/mp4">
+        <a href="{% url 'move_test2' %}">
+            <video class="video" muted autoplay playsinline loop width="640" height="360" controls>
+                <source src="{% static 'cctv_video/cctv2.mp4' %}" type="video/mp4">
+        <a href="{% url 'move_test3' %}">
+            <video class="video" muted autoplay playsinline loop width="640" height="360" controls>
+                <source src="{% static 'cctv_video/cctv3.mp4' %}" type="video/mp4">
+            <a href="{% url 'move_test4' %}">
+            <video class="video" muted autoplay playsinline loop width="640" height="360" controls>
+                <source src="{% static 'cctv_video/cctv4.mp4' %}" type="video/mp4">
+    </div>
+
+    <script>
+        document.querySelectorAll('.video-link1').forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                var videoName = link.getAttribute('data-video-name');
+                window.location.href = link.href + '?video_name=' + videoName;
+            });
+        });
+    </script>
+
+    <div class="button-container">
+        <label>
+            <input role="switch" type="checkbox" id="workToggle" />
+            <span>작업시작 버튼</span>
+
+        </label>
+
+        <label>
+            <input role="switch" type="checkbox" id="alertToggle" />
+            <span>알림 버튼</span>
+        </label>
+    </div>
+</html>
