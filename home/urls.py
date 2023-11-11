@@ -5,5 +5,9 @@ from home import views
 
 urlpatterns = [
     path('', views.home_main, name='main'),
-    path('move_test', views.move_page, name='move_test'),
+    path('video_detect1', views.move_page1, name='move_test1'),
+    path('video_detect2', views.move_page2, name='move_test2'),
+    path('video_detect3', views.move_page3, name='move_test3'),
+    path('video_detect4', views.move_page4, name='move_test4'),
+    path('video1', views.video, name='video1'),
 ]
