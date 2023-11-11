@@ -96,16 +96,16 @@
     <div class="video-container">
         <a href="{% url 'move_test1' %}">
             <video class="video" muted autoplay playsinline loop width="640" height="360" controls>
-                <source src="{% static 'test_video/test1.mp4' %}" class="video-link1" type="video/mp4">
+                <source src="{% static 'cctv_video/cctv1.mp4' %}" type="video/mp4">
         <a href="{% url 'move_test2' %}">
             <video class="video" muted autoplay playsinline loop width="640" height="360" controls>
-                <source src="{% static 'test_video/test2.mp4' %}" type="video/mp4">
+                <source src="{% static 'cctv_video/cctv2.mp4' %}" type="video/mp4">
         <a href="{% url 'move_test3' %}">
             <video class="video" muted autoplay playsinline loop width="640" height="360" controls>
-                <source src="{% static 'test_video/test3.mp4' %}" type="video/mp4">
-        <a href="{% url 'move_test4' %}">
+                <source src="{% static 'cctv_video/cctv3.mp4' %}" type="video/mp4">
+            <a href="{% url 'move_test4' %}">
             <video class="video" muted autoplay playsinline loop width="640" height="360" controls>
-                <source src="{% static 'test_video/test4.mp4' %}" type="video/mp4">
+                <source src="{% static 'cctv_video/cctv4.mp4' %}" type="video/mp4">
     </div>
 
     <script>
@@ -122,6 +122,7 @@
         <label>
             <input role="switch" type="checkbox" id="workToggle" />
             <span>작업시작 버튼</span>
+
         </label>
 
         <label>

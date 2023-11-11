@@ -9,5 +9,5 @@ urlpatterns = [
     path('video_detect2', views.move_page2, name='move_test2'),
     path('video_detect3', views.move_page3, name='move_test3'),
     path('video_detect4', views.move_page4, name='move_test4'),
-    path('video1', views.video, name='video1'),
+
 ]
