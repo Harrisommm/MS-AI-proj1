@@ -1,14 +1,14 @@
 from django.shortcuts import render
 
 from django.views.decorators import gzip
-from django.http import StreamingHttpResponse
+from django.http import StreamingHttpResponse, JsonResponse
 from ultralytics import YOLO
 import cv2
 import threading
 import time
 
 model = YOLO("./model/best.pt")
-model2 = YOLO("./model/best2.pt")
+# model2 = YOLO("./model/best2.pt")
 video_path = "./static/test_video/test1.mp4"
 detect_status = dict(manhole_closed = None, manhole_hole = None, person= None)
 # ------------------------------------------------
@@ -68,5 +68,11 @@ def stream():
                 b'Content-Type: image/jpeg\r\n\r\n' + open('./temp/detect_image.jpg', 'rb').read() + b'\r\n')  
 
 
+pedestrian = 1
 
-
+def sound(request):
+    if pedestrian==1:
+        context = {'sound':1}
+        return JsonResponse(context)
+    else:
+        pass
