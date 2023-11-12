@@ -8,7 +8,6 @@ import threading
 import time
 
 model = YOLO("./model/best.pt")
-model2 = YOLO("./model/best2.pt")
 video_path = "./static/test_video/test1.mp4"
 detect_status = dict(manhole_closed = None, manhole_hole = None, person= None)
 # ------------------------------------------------
