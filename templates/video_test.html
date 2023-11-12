@@ -7,28 +7,81 @@
     <meta name="description" content="" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="static/css/toggle.css" rel="stylesheet" type="text/css"/>
+    <style>
+        body {
+            background-color: #333;
 
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        }
+        .button-container {
+            font-size: 30px;
+            padding: 30px 50px;
+            flex-basis: 50%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #F1F1F3;;
+            height: 100%;
+            color: #333;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .button-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .button-container label {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .button-container label:first-child {
+            margin-bottom: 20px;
+        }
+
+        .button-container label:nth-child(2) {
+            margin-bottom: 20px;
+        }
+
+        .button-container label input {
+            margin-left: 10px;
+        }
+    </style>
 </head>
 <body>
 
-<h1>video click</h1>
-
+<h1><span style="border-radius: 5px; padding: 0.6em 1em; background: #F1F1F3; font-weight: bold;">&#128270;Object Detection Video</span></p></h1>
 
 <table>
     <tr>
         <td width="200%">
             <img src="http://127.0.0.1:8000/video_test" style="width:640px;" />
-            <p>{{label1}}</p>
-            <p>detect label is {{label1}}</p>
         </td>
         <td width="200%">
         </td>
     </tr>
 </table>
+    <div class="button-container">
+        <h1>관리자 TOOLS</h1>
+        <label>
+            <input role="switch" type="checkbox" id="workToggle" />
+            <span><h2>작업시작 버튼&#128679;</span></h2>
+        </label>
 
+        <label>
+            <input role="switch" type="checkbox" id="alertToggle" />
+            <span><h2>알림 버튼&#128266;</h2></span>
+        </label>
+    </div>
 </body>
+
 </html>
