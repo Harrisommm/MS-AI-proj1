@@ -14,7 +14,8 @@ detect_status = dict(manhole_closed = None, manhole_hole = None, person= None)
 @gzip.gzip_page
 def video(request):
     try:
-        # stream 함수에 frame_num, cap 전달
+        # output을 HttpResponse에 주게 되고
+        # stream()은 비디오캡처 후 객체인식 후 return
         output = stream()
         return StreamingHttpResponse(output, content_type="multipart/x-mixed-replace;boundary=frame")
     except: # This is bad! replace it with proper handling
